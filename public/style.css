@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
+
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  padding: 40px;
+  background-color: #f4f6f8;
+  color: #333;
+  max-width: 960px;
+  margin: auto;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #2c3e50;
+}
+
+input, select, button {
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+li {
+  background-color: #fff;
+  margin-bottom: 12px;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+li.done {
+  text-decoration: line-through;
+  color: gray;
+  opacity: 0.7;
+}
+
+.priority-high {
+  border-left: 5px solid #e74c3c;
+}
+.priority-medium {
+  border-left: 5px solid #f1c40f;
+}
+.priority-low {
+  border-left: 5px solid #2ecc71;
+}
+
+.todo-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.todo-row span {
+  flex: 1;
+  min-width: 0;
+  margin-right: 10px;
+}
+.todo-row button {
+  min-width: 80px;
+  padding: 6px 12px;
+  font-size: 14px;
+  border-radius: 4px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.modal-content {
+  background: white;
+  margin: 10% auto;
+  padding: 20px;
+  width: 90%;
+  max-width: 350px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+.modal-content h3 {
+  margin-bottom: 15px;
+  color: #34495e;
+}
+
+textarea#todo-input {
+  width: 100%;
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  resize: vertical; /* ユーザーが縦方向に伸縮可能に */
+}
+
+/* ✅ 横並びレイアウト（PC） */
+@media (min-width: 768px) {
+  .todo-layout {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+  }
+
+  .todo-input-area {
+    flex: 1;
+    max-width: 300px;
+  }
+
+  .todo-list-area {
+    flex: 2;
+    margin-top: -2px; /* ✅ PC表示時のみ ToDoリストを少し上へ */
+  }
+}
+
+
+  .todo-input-area {
+    max-width: 300px;
+  }
+
+  .todo-list-area {
+    flex: 2;
+    overflow-y: auto;
+  }
+
+  #todo-list {
+    flex-grow: 1; /* 🔸 リストが高さに応じて伸びる */
+  }
+
+
+
+/* ✅ モバイル対応 */
+@media (max-width: 767px) {
+   .todo-input-area {
+    margin: 0 auto;
+    max-width: 90%;
+  }
+  body {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  input, select, button {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .modal-content {
+    padding: 15px;
+  }
+
+  .todo-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .todo-row span {
+    width: 100%;
+    margin-bottom: 6px;
+  }
+
+  .todo-row button {
+    width: 100%;
+    margin: 5px 0;
+  }
+}
+#logout-btn {
+  width: 50%;
+  margin: 20px auto 0;
+  display: block;
+}

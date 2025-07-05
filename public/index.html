@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Firebase ToDo App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>ToDoリスト</h1>
+
+  <!-- 🔐 認証エリア -->
+  <div id="auth-container">
+    <input type="email" id="email" placeholder="メールアドレス" />
+    <input type="password" id="password" placeholder="パスワード" />
+    <button id="signup-btn">新規登録</button>
+    <button id="login-btn">ログイン</button>
+  </div>
+
+  
+
+  <!-- 📝 ToDoエリア -->
+  <div id="todo-container" style="display: none;">
+    <div class="todo-layout">
+      <!-- 入力フォーム -->
+      <div class="todo-input-area">
+        <textarea id="todo-input" placeholder="やることを入力" rows="3"></textarea>
+        <input type="date" id="todo-deadline" />
+        <select id="todo-priority">
+          <option value="高">高</option>
+          <option value="中" selected>中</option>
+          <option value="低">低</option>
+        </select>
+        <button id="add-btn">追加</button>
+
+        <select id="sort-select">
+          <option value="default">並び替えなし</option>
+          <option value="deadline">締切順</option>
+          <option value="priority">優先度順</option>
+        </select>
+
+        <select id="filter-select">
+          <option value="all">すべて</option>
+          <option value="done">完了済み</option>
+          <option value="not-done">未完了</option>
+        </select>
+      </div>
+
+      <!-- リスト表示 -->
+      <div class="todo-list-area">
+        <ul id="todo-list"></ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ✏️ 編集モーダル -->
+  <div id="edit-modal" class="modal">
+    <div class="modal-content">
+      <h3>編集</h3>
+      <input type="text" id="edit-text" />
+      <input type="date" id="edit-deadline" />
+      <select id="edit-priority">
+        <option value="高">高</option>
+        <option value="中">中</option>
+        <option value="低">低</option>
+      </select>
+      <button id="save-edit">保存</button>
+      <button id="cancel-edit">キャンセル</button>
+    </div>
+  </div>
+<!-- 🚪 ログアウトボタン -->
+  <div id="logout-container" style="display: none; margin-bottom: 20px;">
+    <button id="logout-btn">ログアウト</button>
+  </div>
+  <!-- 🔗 Firebase対応JS -->
+  <script type="module" src="app.js"></script>
+</body>
+</html>
