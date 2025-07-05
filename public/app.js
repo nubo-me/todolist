@@ -5,13 +5,13 @@ import { getFirestore, doc, getDoc, setDoc } from "https://www.gstatic.com/fireb
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyB9vA6Gg8L8-QHWihzWzGO5wKLvJpMYrBI",
-  authDomain: "todolist-f2323.firebaseapp.com",
-  projectId: "todolist-f2323",
-  storageBucket: "todolist-f2323.firebasestorage.app",
-  messagingSenderId: "590152000372",
-  appId: "1:590152000372:web:c0081b3630ce85c3d00221",
-  measurementId: "G-WYF5TSKV1S"
+  apiKey: "",
+  authDomain: "",
+  projectId: "",
+  storageBucket: "",
+  messagingSenderId: "",
+  appId: "",
+  measurementId: ""
 };
 
 const app = initializeApp(firebaseConfig);
